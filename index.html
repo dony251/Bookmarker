@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookmarker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/stylee.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="pt-5">
+      <div class="container pb-5">
+        <h1 class="text-center py-2">Bookmarker</h1>
+        <div class="my-border"></div>
+
+        <div class="myinputs">
+          <h2 class="text-center py-3">
+            <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+
+          <!-- Site Name -->
+          <div class="form-group position-relative mb-3">
+            <label for="bookmarkName" class="form-label">
+              <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name
+            </label>
+            <input
+              type="text"
+              id="bookmarkName"
+              class="form-control pe-5"
+              placeholder="Bookmark Name"
+              oninput="validateName()"
+            />
+            <i
+              id="nameIcon"
+              class="fa-solid fa-circle-question position-absolute top-50 end-0 translate-middle-y me-3 text-muted"
+            ></i>
+          </div>
+
+          <!-- Site URL -->
+          <div class="form-group position-relative mt-4">
+            <label for="siteUrl" class="form-label">
+              <i class="fa-solid fa-link pe-2"></i> Site URL
+            </label>
+            <input
+              type="url"
+              id="siteUrl"
+              class="form-control pe-5"
+              placeholder="Website URL"
+              oninput="validateURL()"
+            />
+            <i
+              id="urlIcon"
+              class="fa-solid fa-circle-question position-absolute top-50 end-0 translate-middle-y me-3 text-muted"
+            ></i>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button onclick="submitData()" class="btn my-4 submit-btn">
+              Submit
+            </button>
+          </div>
+
+          <div class="my-border2"></div>
+        </div>
+
+        <!-- Alert -->
+        <div class="alert_message d-none" id="urlAlert">
+          <div class="container">
+            <div class="demo">
+              <div class="circles">
+                <div class="red_circle"></div>
+                <div class="orange_circle"></div>
+                <div class="green_circle"></div>
+              </div>
+              <i onclick="closeAlert()" class="fa-solid fa-xmark close text-black"></i>
+            </div>
+            <p>Site Name or Url is not valid, Please follow the rules below :</p>
+            <ul>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i> Site name must contain at least 3 characters
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i> Site URL must be a valid one
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <table class="table border text-center bg-info">
+          <thead>
+            <tr>
+              <th class="w-25">Index</th>
+              <th class="w-25">Website Name</th>
+              <th class="w-25">Visit</th>
+              <th class="w-25">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="content"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="java script/bootstrap.bundle.min.js"></script>
+    <script src="java script/main.js"></script>
+  </body>
+</html>
+
+
+
+
+
